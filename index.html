@@ -12,6 +12,7 @@
 </style>
 <!-- <link rel="icon" href="/imgs/favicon.ico" type="image/x-icon"/> -->
 <link href="css/default.css" type="text/css" rel="stylesheet">
+<link href="css/animate.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
@@ -19,10 +20,13 @@
 </head>
 
 <body>
-<audio autoplay="autoplay" controls="controls" loop="loop" preload="auto"
+<audio autoplay="autoplay"  loop="loop" preload="auto"
             src="music.mp3">
       你的浏览器不支持audio标签
 </audio>
+<img id="img1" class="animated rollIn hide" src="imgs/1.jpg">
+<img id="img2" class="animated slideInDown hide" src="imgs/2.jpg">
+<img id="img3" class="animated zoomInRight hide" src="imgs/3.jpg">
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">
@@ -42,7 +46,7 @@
 			The girl can not be separated from the boy;<br />
 			<span class="comments">// Both wind and snow all over the sky.</span><br />
 			<span class="comments">// Whether on foot or 5 kilometers.</span><br />
-			<span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br />
+			<span class="keyword">The boy</span> is very <span class="keyword">happy</span>;<br />
 			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
 			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
 			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
@@ -51,8 +55,13 @@
 			<br>
 			<br>
 			I want to say:<br />
-			Baby, I will love you forever !<br />
-			You are the apple of my eye !<br />
+			Baby, I will love you forever !<br /><br/>
+
+			Those days when we were together appear in my mind time after time,<br/>
+			because they were so joyful, happy, blest.<br/>
+			I miss you ,<br/>
+			and miss you so mach.
+			<p class="important_words">You are the apple of my eye !<p />
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
@@ -61,14 +70,249 @@
 					姑娘，这是我们在一起的时光。
 					<div id="elapseClock"></div>
 				</div>
+
 				<div id="loveu">
-					余生，请多多指教！<br/>
+					<p>执子之手，与子偕老！<p/>
+					<p>余生，请多多指教！<p/>
 					<div class="signature">- 李甲辰</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<div id="firework" class="hide">
+			<div class="firework-grp firework-grp2">
+                        <div class="firework size05 pos1 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size08 pos2 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework pos3 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size15 pos4 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size18 pos5 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size20 pos6 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size13 pos7">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size05 pos8">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-grp firework-grp3">
+                        <div class="firework size05 pos1 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size08 pos2 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework pos3 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size15 pos4 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size18 pos5 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size20 pos6 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size13 pos7">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size05 pos8">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 <script type="text/javascript">
 var offsetX = $("#loveHeart").width() / 2;
@@ -101,6 +345,19 @@ if (!document.createElement('canvas').getContext) {
 
 	adjustCodePosition();
 	$("#code").typewriter();
+
+	setTimeout(function () {
+		$("#firework").removeClass("hide");
+	}, 15000);
+	setTimeout(function () {
+		$("#img1").removeClass("hide");
+	}, 17000);
+	setTimeout(function () {
+		$("#img2").removeClass("hide");
+	}, 19000);
+	setTimeout(function () {
+		$("#img3").removeClass("hide");
+	}, 21000);
 }
 </script>
 </body>
