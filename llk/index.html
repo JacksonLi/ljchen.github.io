@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <title>记忆连连看</title>
+  <meta http-equiv="keywords" content="记忆连连看 连连看 游戏">
+  <meta http-equiv="description" content="记忆连连看">
+  
+  <script type="text/javascript">
+  </script>
+
+  <link type="text/css" rel="stylesheet" href="css/index.css"/>
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  
+</head>
+<body>
+  <header>
+    <div class="titleName">
+      记忆连连看
+    </div>
+  </header>
+  <div class="nav container">
+      <div class="row">
+        <div class="col-xs-4 col-md-3 ">
+          <span class="bold ">难度等级：</span>
+          <select class="sel form-control">
+            <option>新手上路</option>
+            <option>正常驾驶</option>
+            <option>老司机飙车</option>
+          </select>
+        </div>
+        <div class="col-xs-4 col-md-3 ">
+          <button type="button" class="btn btn-success" onclick="startGame()">开始游戏</button>
+        </div>
+        <div class="col-xs-4 col-md-3 ">
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#customer_relationship-manager">查看游戏规则</button>
+        </div>
+      </div>
+  </div>
+  <div class="mainContent container">
+      <div class="row">
+        <div class="col-xs-12 col-md-9 gameBoardContainer">
+          <div class="gameBoard">
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img1" src="img/0.png" class="imgAll" onclick="turnoverImg(1)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img2" src="img/0.png" class="imgAll" onclick="turnoverImg(2)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img3" src="img/0.png" class="imgAll" onclick="turnoverImg(3)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img4" src="img/0.png" class="imgAll" onclick="turnoverImg(4)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img5" src="img/0.png" class="imgAll" onclick="turnoverImg(5)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img6" src="img/0.png" class="imgAll" onclick="turnoverImg(6)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img7" src="img/0.png" class="imgAll" onclick="turnoverImg(7)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img8" src="img/0.png" class="imgAll" onclick="turnoverImg(8)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img9" src="img/0.png" class="imgAll" onclick="turnoverImg(9)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img10" src="img/0.png" class="imgAll" onclick="turnoverImg(10)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img11" src="img/0.png" class="imgAll" onclick="turnoverImg(11)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img12" src="img/0.png" class="imgAll" onclick="turnoverImg(12)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img13" src="img/0.png" class="imgAll" onclick="turnoverImg(13)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img14" src="img/0.png" class="imgAll" onclick="turnoverImg(14)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img15" src="img/0.png" class="imgAll" onclick="turnoverImg(15)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img16" src="img/0.png" class="imgAll" onclick="turnoverImg(16)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img17" src="img/0.png" class="imgAll" onclick="turnoverImg(17)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img18" src="img/0.png" class="imgAll" onclick="turnoverImg(18)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img19" src="img/0.png" class="imgAll" onclick="turnoverImg(19)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img20" src="img/0.png" class="imgAll" onclick="turnoverImg(20)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img21" src="img/0.png" class="imgAll" onclick="turnoverImg(21)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img22" src="img/0.png" class="imgAll" onclick="turnoverImg(22)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img23" src="img/0.png" class="imgAll" onclick="turnoverImg(23)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img24" src="img/0.png" class="imgAll" onclick="turnoverImg(24)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img25" src="img/0.png" class="imgAll" onclick="turnoverImg(25)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img26" src="img/0.png" class="imgAll" onclick="turnoverImg(26)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img27" src="img/0.png" class="imgAll" onclick="turnoverImg(27)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img28" src="img/0.png" class="imgAll" onclick="turnoverImg(28)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img29" src="img/0.png" class="imgAll" onclick="turnoverImg(29)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img30" src="img/0.png" class="imgAll" onclick="turnoverImg(30)">
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-xs-4 col-md-3 statusBoard">
+          <p class="game_num">第&nbsp;&nbsp;<span id="game_num"></span>&nbsp;&nbsp;关</p>
+          <p>总积分：<span></span></p>
+          <p>本关积分：<span></span></p>
+          <p>倒计时：<span></span></p>
+        </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="customer_relationship-manager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <div class="modal-title" id="myModalLabel">
+            客户关系经理
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 job-main-info">发布时间：2016年12月15日</div>
+            <div class="col-md-6 job-main-info">工作地点：北京</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-main-info">你需要具备</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-require">
+              <p>•  热爱骑行，热爱互联网，共享单车的深度用户，最好不止用过一款共享单车。</p>
+              <p>•  出色的同理心。当用户通过微信、微博、App或者电话渠道抱怨单车故障时，你需要以手捧心，第一时间帮他们解决问题。</p>
+              <p>•  非常 666 的信息收集及分析能力，你需要积极想办法提高客服效率，兼顾速度和质量，让你的岗位变得无可取代。</p>
+              <p>•  三年以上专业客服及客服经理工作经验（适用于客服主管）；熟悉使用办公软件。</p>
+              <p>•  性格开朗，不怕你自high，就怕你不“浪”，要善于内外部沟通。</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-main-info">你，可以得到什么？</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-require">
+              <p>•  用你的专业去“撩倒”一群粉丝的成就感。</p>
+              <p>•  激荡出能与陌生人迅速友善相处的模式，让每个用户都点名翻你牌子。</p>
+              <p>•  和最年轻的团队一起参与最有意思的共享单车大战。</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-main-info">还可以</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 job-require">
+              <p>•  结合公司整体战略方向，规划由你单车各学校及区域整体客服方案。</p>
+              <p>•  搭建各区域客服流程，组建客服团队。</p>
+              <p>•  对客服整体工作进行趋势分析，并提交分析报告分享给全公司。</p>
+              <p>•  负责产品持续升级，对创意概念、创新思想和创意执行拥有全程的把控力，不断提升用户满意度及忠诚度。</p>
+              <p>•  跟着公司一起经历1到100的冒险。</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 contact-us">简历请投递 recruit@unibike.me</div>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+  <footer>
+  </footer>
+</body>
+  
+</html>

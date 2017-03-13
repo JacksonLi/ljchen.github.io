@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="女性商品大数据分析平台">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>大数据分析平台</title>
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/icon.css">
+    <link rel="stylesheet" href="./styles/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./styles/material-charts.css">
+    <link rel="stylesheet" href="./styles/material.light_blue-green.min.css">
+    <link rel="stylesheet" href="./styles/clusterize.css">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/animate.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/material-charts.js"></script>
+    <script type="text/javascript" src="./js/clusterize.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="content-wrapper" class="main-content-wrapper">
+        <div class="part1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-10 col-md-9 part1Left">
+                        <div class="bold">消费数据生产分析系统</div>
+                    </div>
+                    <div class="col-xs-4 col-md-3 part1Right">
+                        <div>
+                            <span class="bold">数据源平台</span>
+                            <select class="sel form-control">
+                                <option>京东</option>
+                                <option>淘宝</option>
+                                <option>唯品会</option>
+                                <option>聚美优品</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part2">
+            <div class="container parta card">
+                <div class="row">
+                    <div class="col-xs-16 col-md-12">
+                        <table class="tableShow">
+                            <tr>
+                                <td class="td1 bold">累计抓取商品条数</td>
+                                <td class="bold">新增条数</td>
+                                <td class="bold">加权平均价格</td>
+                                <td class="bold">加权平均评价数</td>
+                                <td class="td5 bold">加权平均好评度</td>
+                                <td class="td6">
+                                    <div class="controls">
+                                        <button class="btn btn-success" id="clear">清零</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1" id="sampleCount">0</td>
+                                <td id="moreSampleCount">0</td>
+                                <td id="averagePrice">0</td>
+                                <td id="averageCommentCount" class="bold">0</td>
+                                <td id="averageRate" class="td5 bold">0%</td>
+                                <td class="td6">
+                                    <div class="controls analyse">
+                                        <button class="btn btn-success" id="analyse">分析</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container partb ">
+                <div class="row">
+                    <div class="col-xs-4 col-md-3 partbLeft">
+                        <div class="partbLeft1 card">
+                            <div class="partbLeft1Top" id="goods">
+                                <form id="choose">
+                                    <label class="pointer">
+                                        <input type="radio" name="goods" value="goods1"> 个护化妆、清洁用品、宠物</label>
+                                    <br>
+                                    <label class="pointer">
+                                        <input type="radio" name="goods" value="goods2"> 母婴、玩具乐器</label>
+                                    <br>
+                                    <label class="pointer">
+                                        <input type="radio" name="goods" value="goods3"> 男装、女装、童装、内衣</label>
+                                    <br>
+                                    <label class="pointer">
+                                        <input type="radio" name="goods" value="goods4"> 鞋靴、箱包、珠宝、奢侈品</label>
+                                    <br>
+                                </form>
+                            </div>
+                            <div class="partbLeft1Bottom">
+                                <p class="bold items">
+                                    选定商品种类：
+                                </p>
+                                <p class="bold item">
+                                    <span id="theChoice" class="bold"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="partbLeft2 card">
+                            <div class="partbLeft2Top">
+                                <div class="time">
+                                    <span class="bold">时间</span>
+                                    <span id="timeCounter" class="timeCounter">00:00:00 000</span>
+                                </div>
+                            </div>
+                            <div class="partbLeft2Bottom">
+                                <div class="control">
+                                    <div class="controls">
+                                        <button class="btn btn-success" id="btn1">开始</button>
+                                    </div>
+                                    <div class="controls">
+                                        <button class="btn btn-success" id="btn2">停止</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-9 card partbRight scroll" id="partbRight">
+                        <div id="tableShow">
+                            <table class="show table table-striped">
+                                <thead>
+                                    <tr class="firstTr">
+                                        <td class="tdGoodsId">商品编号</td>
+                                        <td class="tdGoodsPrice">商品名称</td>
+                                        <td>价格</td>
+                                        <td>累计评价数</td>
+                                        <td>好评度</td>
+                                        <td class="tdTime">爬取时间</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="show">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="body-bg-color hide" id="bg-box">
+                            <div class="load-container load6" id="transition">
+                                <div class="loader">Loading...</div>
+                            </div>
+                        </div>
+                        <div id="analyseResult" class="analyseResultCss hide">
+                            <div class="dataTitle">
+                                <table>
+                                    <tr>
+                                        <td class="dataTitleTd">数据采集分析</td>
+                                        <td class="dataTitleTd">新上架商品数据：</td>
+                                        <td class="dataTitleTd">日期：<span id="date">2016-8-21</span></td>
+                                        <td class="dataTitleBack"><img src="./images/back.jpg" id="back"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="dataAnalyse">
+                                <table>
+                                    <tr>
+                                        <td class="dataAnalyse1">
+                                            <p class="bold">价格数据分析：</p>
+                                        </td>
+                                        <td class="dataAnalyse2">
+                                            <p>经过加权后，<span class="highLight whatGoodsToAnalyse"></span>商品平均销售价格环比为<span class="highLight" id="relativeRatioOfPriceId">0.37%</span>，同比于上月为<span class="highLight" id="absoluteRatioOfPriceId">2.4%</span>。其中，新增商品数据价格贡献系数为：<span class="highLight" id="contributeRate1Id">51</span>，即产生<span class="highLight">正向</span>影响。</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dataAnalyse1 bold">
+                                            <p class="bold">反馈活跃度分析：</p>
+                                        </td>
+                                        <td class="dataAnalyse2">
+                                            <p>经过加权后，<span class="highLight whatGoodsToAnalyse"></span>商品平均累计评价数增长率环比为<span class="highLight" id="relativeRatioOfCommentId">-0.48%</span>，同比于上月为<span class="highLight" id="absoluteRatioOfCommentId">-3.6%</span>。其中，新增商品数据价格贡献系数为：<span class="highLight" id="contributeRate2Id">46</span>，即产生<span class="highLight">负向</span>影响。</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dataAnalyse1 bold">
+                                            <p class="bold">产品体验分析：</td>
+                                        <td class="dataAnalyse2">
+                                            <p>经过加权后，<span class="highLight whatGoodsToAnalyse"></span>商品平均好评度增长率环比为<span class="highLight" id="relativeRatioOfGoodCommentId">0.2%</span>，同比于上月为<span class="highLight" id="absoluteRatioOfGoodCommentId">5.1%</span>。其中，新增商品数据价格贡献系数为：<span class="highLight" id="contributeRate3Id">60</span>，即产生<span class="highLight">正向</span>影响。</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dataAnalyse1 bold">
+                                            <p class="bold">初步综合分析：</p>
+                                        </td>
+                                        <td class="dataAnalyse2">
+                                            <p>基于易观国际最新对京东商城的典型女性用户群体分析数据为样本数据，以今日实时单类数据集和过往数据集作为关联子样本，经过分析指出，华北、华南、华东一带典型一二线城市月收入中位数在5000元的女性用户的消费额度能力继续<span class="highLight">上升</span>，总体消费频率有所<span class="highLight">下降</span>，产品用户反馈趋势<span class="highLight">上升</span>。</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="info">
+                                <p>以上分析是基于样本数据的有限算法运算结果，不对任何商业策略及结果承担责任，更详细的分析请点击<span class="highLight">数据聚合</span>，进行全面分析。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part3">
+            <p class="allRights1">Copyright © 2015 贵州爱享时代网络科技有限公司 All Rights Reserved. 黔ICP备15020119号</p>
+            <p class="allRights2">技术支持：贵州职圈科技有限公司</p>
+        </div>
+    </div>
+</body>
+
+</html>
