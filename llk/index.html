@@ -9,18 +9,10 @@
   <title>记忆连连看</title>
   <meta http-equiv="keywords" content="记忆连连看 连连看 游戏">
   <meta http-equiv="description" content="记忆连连看">
-  
-  <script type="text/javascript">
-  </script>
 
   <link type="text/css" rel="stylesheet" href="css/index.css"/>
   <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
   <link type="text/css" rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
-
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
   
 </head>
 <body>
@@ -29,138 +21,401 @@
       记忆连连看
     </div>
   </header>
-  <div class="nav container">
+  <div class="nav_container">
+    <div class="nav">
       <div class="row">
-        <div class="col-xs-4 col-md-3 ">
+        <div class="col-xs-6 col-md-4 ">
           <span class="bold ">难度等级：</span>
-          <select class="sel form-control">
-            <option>新手上路</option>
-            <option>正常驾驶</option>
-            <option>老司机飙车</option>
+          <select id="mode" class="sel form-control">
+            <option value="easy">新手上路</option>
+            <option value="middle">正常驾驶</option>
+            <option value="difficult">老司机飙车</option>
           </select>
         </div>
-        <div class="col-xs-4 col-md-3 ">
-          <button type="button" class="btn btn-success" onclick="startGame()">开始游戏</button>
+        <div class="col-xs-6 col-md-4 ">
+          <span class="bold ">游戏主题：</span>
+          <select id="style" class="sel form-control">
+            <option value="car">汽车Logo</option>
+            <option value="player">NBA Player</option>
+            <option value="star">娱乐明星</option>
+          </select>
         </div>
-        <div class="col-xs-4 col-md-3 ">
+        <div class="col-xs-4 col-md-2 ">
+          <button type="button" id="start_game" class="btn btn-success" onclick="startGame()">开始游戏</button>
+        </div>
+        <div class="col-xs-4 col-md-2 ">
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#customer_relationship-manager">查看游戏规则</button>
         </div>
       </div>
+    </div>
   </div>
-  <div class="mainContent container">
+  <div class="mainContent">
+    <div class="game_container">
       <div class="row">
         <div class="col-xs-12 col-md-9 gameBoardContainer">
-          <div class="gameBoard">
+          <div id="game_board" class="gameBoard hide">
               <div class="row">
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img1" src="img/0.png" class="imgAll" onclick="turnoverImg(1)">
+                  <img id="img1" src="img/car/0.png" class="imgAll" onclick="turnoverImg(1)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img2" src="img/0.png" class="imgAll" onclick="turnoverImg(2)">
+                  <img id="img2" src="img/car/0.png" class="imgAll" onclick="turnoverImg(2)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img3" src="img/0.png" class="imgAll" onclick="turnoverImg(3)">
+                  <img id="img3" src="img/car/0.png" class="imgAll" onclick="turnoverImg(3)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img4" src="img/0.png" class="imgAll" onclick="turnoverImg(4)">
+                  <img id="img4" src="img/car/0.png" class="imgAll" onclick="turnoverImg(4)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img5" src="img/0.png" class="imgAll" onclick="turnoverImg(5)">
+                  <img id="img5" src="img/car/0.png" class="imgAll" onclick="turnoverImg(5)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img6" src="img/0.png" class="imgAll" onclick="turnoverImg(6)">
+                  <img id="img6" src="img/car/0.png" class="imgAll" onclick="turnoverImg(6)">
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img7" src="img/0.png" class="imgAll" onclick="turnoverImg(7)">
+                  <img id="img7" src="img/car/0.png" class="imgAll" onclick="turnoverImg(7)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img8" src="img/0.png" class="imgAll" onclick="turnoverImg(8)">
+                  <img id="img8" src="img/car/0.png" class="imgAll" onclick="turnoverImg(8)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img9" src="img/0.png" class="imgAll" onclick="turnoverImg(9)">
+                  <img id="img9" src="img/car/0.png" class="imgAll" onclick="turnoverImg(9)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img10" src="img/0.png" class="imgAll" onclick="turnoverImg(10)">
+                  <img id="img10" src="img/car/0.png" class="imgAll" onclick="turnoverImg(10)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img11" src="img/0.png" class="imgAll" onclick="turnoverImg(11)">
+                  <img id="img11" src="img/car/0.png" class="imgAll" onclick="turnoverImg(11)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img12" src="img/0.png" class="imgAll" onclick="turnoverImg(12)">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img13" src="img/0.png" class="imgAll" onclick="turnoverImg(13)">
-                </div>
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img14" src="img/0.png" class="imgAll" onclick="turnoverImg(14)">
-                </div>
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img15" src="img/0.png" class="imgAll" onclick="turnoverImg(15)">
-                </div>
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img16" src="img/0.png" class="imgAll" onclick="turnoverImg(16)">
-                </div>
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img17" src="img/0.png" class="imgAll" onclick="turnoverImg(17)">
-                </div>
-                <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img18" src="img/0.png" class="imgAll" onclick="turnoverImg(18)">
+                  <img id="img12" src="img/car/0.png" class="imgAll" onclick="turnoverImg(12)">
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img19" src="img/0.png" class="imgAll" onclick="turnoverImg(19)">
+                  <img id="img13" src="img/car/0.png" class="imgAll" onclick="turnoverImg(13)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img20" src="img/0.png" class="imgAll" onclick="turnoverImg(20)">
+                  <img id="img14" src="img/car/0.png" class="imgAll" onclick="turnoverImg(14)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img21" src="img/0.png" class="imgAll" onclick="turnoverImg(21)">
+                  <img id="img15" src="img/car/0.png" class="imgAll" onclick="turnoverImg(15)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img22" src="img/0.png" class="imgAll" onclick="turnoverImg(22)">
+                  <img id="img16" src="img/car/0.png" class="imgAll" onclick="turnoverImg(16)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img23" src="img/0.png" class="imgAll" onclick="turnoverImg(23)">
+                  <img id="img17" src="img/car/0.png" class="imgAll" onclick="turnoverImg(17)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img24" src="img/0.png" class="imgAll" onclick="turnoverImg(24)">
+                  <img id="img18" src="img/car/0.png" class="imgAll" onclick="turnoverImg(18)">
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img25" src="img/0.png" class="imgAll" onclick="turnoverImg(25)">
+                  <img id="img19" src="img/car/0.png" class="imgAll" onclick="turnoverImg(19)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img26" src="img/0.png" class="imgAll" onclick="turnoverImg(26)">
+                  <img id="img20" src="img/car/0.png" class="imgAll" onclick="turnoverImg(20)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img27" src="img/0.png" class="imgAll" onclick="turnoverImg(27)">
+                  <img id="img21" src="img/car/0.png" class="imgAll" onclick="turnoverImg(21)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img28" src="img/0.png" class="imgAll" onclick="turnoverImg(28)">
+                  <img id="img22" src="img/car/0.png" class="imgAll" onclick="turnoverImg(22)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img29" src="img/0.png" class="imgAll" onclick="turnoverImg(29)">
+                  <img id="img23" src="img/car/0.png" class="imgAll" onclick="turnoverImg(23)">
                 </div>
                 <div class="col-xs-3 col-md-2 notPadding">
-                  <img id="img30" src="img/0.png" class="imgAll" onclick="turnoverImg(30)">
+                  <img id="img24" src="img/car/0.png" class="imgAll" onclick="turnoverImg(24)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img25" src="img/car/0.png" class="imgAll" onclick="turnoverImg(25)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img26" src="img/car/0.png" class="imgAll" onclick="turnoverImg(26)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img27" src="img/car/0.png" class="imgAll" onclick="turnoverImg(27)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img28" src="img/car/0.png" class="imgAll" onclick="turnoverImg(28)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img29" src="img/car/0.png" class="imgAll" onclick="turnoverImg(29)">
+                </div>
+                <div class="col-xs-3 col-md-2 notPadding">
+                  <img id="img30" src="img/car/0.png" class="imgAll" onclick="turnoverImg(30)">
                 </div>
               </div>
           </div>
+          <div id="ready" class="gameBoard ready">
+            <div class="ready_word">请先选择难度等级和游戏主题<br/>点击开始游戏按钮即可开始游戏~</div>
+          </div>
+          <div id="pass_game" class="gameBoard passGame hide">
+            <div class="game_congrate">恭喜您成功通过本关卡~</div>
+            <button type="button" class="btn btn-info next_game_btn" onclick="nextGame()">继续闯关</button>
+            <button type="button" class="btn btn-danger next_game_btn" onclick="quitGame()">退出游戏</button>
+          </div>
+          <div id="fail_game" class="gameBoard failGame hide">
+            <div class="game_fail_word">啊哦~ 很遗憾闯关失败~</div>
+            <button type="button" class="btn btn-info replay_game_btn" onclick="replayGame()">重新挑战</button>
+            <button type="button" class="btn btn-danger next_game_btn" onclick="quitGame()">退出游戏</button>
+          </div>
+          <div id="pass_all_game" class="gameBoard passAllGame hide">
+            <div class="game_pass_all_word">恭喜您成功通过<span id="pass_model_name"></span>模式的所有关卡~</div>
+          </div>
         </div>
         <div class="col-xs-4 col-md-3 statusBoard">
+          <p class="game_model hide" id="game_model_en"></p>
           <p class="game_num">第&nbsp;&nbsp;<span id="game_num"></span>&nbsp;&nbsp;关</p>
-          <p>总积分：<span></span></p>
-          <p>本关积分：<span></span></p>
-          <p>倒计时：<span></span></p>
+          <p>本关积分：<span id="the_score"></span></p>
+          <p>总积分：<span id="all_score"></span></p>
+          <p>倒计时：<span id="remain_second"></span> 秒</p>
+          <audio loop autoplay="autoplay">
+            <source src="BGM.mp3" />
+          </audio>
         </div>
       </div>
+    </div>
   </div>
+
+  <div id="firework" class="hide">
+      <div class="firework-grp firework-grp2">
+                        <div class="firework size05 pos1 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size08 pos2 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework pos3 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size15 pos4 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size18 pos5 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size20 pos6 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size13 pos7">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size05 pos8">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-grp firework-grp3">
+                        <div class="firework size05 pos1 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size08 pos2 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework pos3 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size15 pos4 ">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size18 pos5 delay1">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size20 pos6 delay2">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size13 pos7">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                        <div class="firework size05 pos8">
+                            <div class="drops-grp">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                            <div class="drops-grp drops-grp2">
+                                <span class="drop drop-1"></span>
+                                <span class="drop drop-2"></span>
+                                <span class="drop drop-3"></span>
+                                <span class="drop drop-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
   <div class="modal fade" id="customer_relationship-manager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -170,50 +425,18 @@
             &times;
           </button>
           <div class="modal-title" id="myModalLabel">
-            客户关系经理
+            记忆连连看游戏规则
           </div>
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-md-6 job-main-info">发布时间：2016年12月15日</div>
-            <div class="col-md-6 job-main-info">工作地点：北京</div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 job-main-info">你需要具备</div>
-          </div>
-          <div class="row">
             <div class="col-md-12 job-require">
-              <p>•  热爱骑行，热爱互联网，共享单车的深度用户，最好不止用过一款共享单车。</p>
-              <p>•  出色的同理心。当用户通过微信、微博、App或者电话渠道抱怨单车故障时，你需要以手捧心，第一时间帮他们解决问题。</p>
-              <p>•  非常 666 的信息收集及分析能力，你需要积极想办法提高客服效率，兼顾速度和质量，让你的岗位变得无可取代。</p>
-              <p>•  三年以上专业客服及客服经理工作经验（适用于客服主管）；熟悉使用办公软件。</p>
-              <p>•  性格开朗，不怕你自high，就怕你不“浪”，要善于内外部沟通。</p>
+              <p>1、游戏开始前，玩家可以选择游戏的难度等级以及游戏主题，三个游戏等级分别是“新手上路”、“正常驾驶”、“老司机飙车”；三个游戏主题分别是“汽车Logo”、“NBA Player”和“娱乐明星”。难度等级分别对应简单、中等、较难。具体由参数X、Y、Z控制。</p>
+              <p>2、点击游戏开始后，所有图片将对玩家显示X秒，X秒过后，所有图片翻转（不对玩家明示），游戏开始倒计时Y秒。（游戏开始后，无法暂停游戏）</p>
+              <p>3、玩家可以依次点击两张图片，这两张图片将会依次翻转显示，如果这两张图片相同，则消除这两张图片，并增加Z积分。否则，这两张图片再翻转回去。</p>
+              <p>4、玩家需要在规定时间Y秒内消除所有图片，则视为游戏通过。否则，倒计时结束，游戏结束，闯关失败。</p>
+              <p>5、游戏通过后，剩余的时间可以按一定比例M换算成奖励积分，可以选择继续挑战下一关；闯关失败，则可以选择重新开始本关游戏。游戏通过或失败都可以选择退出游戏。</p>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 job-main-info">你，可以得到什么？</div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 job-require">
-              <p>•  用你的专业去“撩倒”一群粉丝的成就感。</p>
-              <p>•  激荡出能与陌生人迅速友善相处的模式，让每个用户都点名翻你牌子。</p>
-              <p>•  和最年轻的团队一起参与最有意思的共享单车大战。</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 job-main-info">还可以</div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 job-require">
-              <p>•  结合公司整体战略方向，规划由你单车各学校及区域整体客服方案。</p>
-              <p>•  搭建各区域客服流程，组建客服团队。</p>
-              <p>•  对客服整体工作进行趋势分析，并提交分析报告分享给全公司。</p>
-              <p>•  负责产品持续升级，对创意概念、创新思想和创意执行拥有全程的把控力，不断提升用户满意度及忠诚度。</p>
-              <p>•  跟着公司一起经历1到100的冒险。</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 contact-us">简历请投递 recruit@unibike.me</div>
           </div>
         </div>
       </div><!-- /.modal-content -->
@@ -221,6 +444,10 @@
   </div>
   <footer>
   </footer>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
   
 </html>

@@ -5,15 +5,241 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>李甲辰主页</title>
-    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>任务分配</title>
 
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <style>
+	body {
+            font-family:"PingFangSC-Regular", "微软雅黑", "Microsoft YaHei", sans-serif;
+            background-color: #fff;
+            margin: 0px 10px;
+        }
+	.btn{
+		width: 100%;
+		margin-top: 10px;
+	}
+	.outcome_container{
+		margin-left: 10px;
+		margin-right: 10px;
+		font-size: 18px;
+		line-height: 28px;
+		margin-top: 20px;
+		margin-bottom: 50px;
+	}
     </style>
 </head>
 
 <body>
-    <h1>待完善</h1>
-</body>
+    <div class="btn">
+    	<button type="button" class="btn btn-info" onclick="start()">任务分配</button>
+    </div>
+    <div class="outcome_container">
+    	<p>随机分配结果如下所示：</p>
+    	<div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                1图： <span id="img1"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                2图： <span id="img2"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                3图： <span id="img3"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                4图： <span id="img4"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                5图： <span id="img5"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                6图： <span id="img6"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                7图： <span id="img7"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                8图： <span id="img8"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                9图： <span id="img9"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                10图： <span id="img10"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                11图： <span id="img11"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                12图： <span id="img12"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                13图： <span id="img13"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                14图： <span id="img14"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                15图： <span id="img15"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                16图： <span id="img16"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                17图： <span id="img17"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                18图： <span id="img18"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                19图： <span id="img19"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                20图： <span id="img20"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                21图： <span id="img21"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                22图： <span id="img22"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                23图： <span id="img23"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                24图： <span id="img24"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                25图： <span id="img25"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                26图： <span id="img26"></span>
+            </div>
+        </div>
+		
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                27任： <span id="img27"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                28任： <span id="img28"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                29任： <span id="img29"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                30任： <span id="img30"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                31任： <span id="img31"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                32任： <span id="img32"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                33任： <span id="img33"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                34任： <span id="img34"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                35任： <span id="img35"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                36任： <span id="img36"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                37任： <span id="img37"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                38任： <span id="img38"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                39任： <span id="img39"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                40任： <span id="img40"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                41任： <span id="img41"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                42任： <span id="img42"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                43任： <span id="img43"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                44任： <span id="img44"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 notPadding">
+                45任： <span id="img45"></span>
+            </div>
+            <div class="col-xs-6 col-md-6 notPadding">
+                46任： <span id="img46"></span>
+            </div>
+        </div>
+    </div>
 
+    <script type="text/javascript" src="js/jquery.js"></script>
+  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+  	var nameArr = ["洪浩楠","黄怀莹","黄文斌","李孟韩","李世杰","潘健略","陈明海","钟荣杰","叶棠明","肖秋凯","张天朗","蔡龙辉","王镜郦","吕泳标","吴余","刘珂宏","陆昶锦","李健雄","林少豪","松诚成","徐玉宝","陈悦轩","王祎","陈瑶","张粤琳","詹静怡","詹娟晓","杨柳","肖琪","宋秋月","邝美霞","贺凌宇","李佩芹","任悦怡","单嘉怡","易苗","黄尹滢","黄秋谷","莫海燕","冼丽柠","罗颖琳","赖婉琪","黄予心","罗佩佩","刘瑞璇","张倩"];
+  	function start () {
+  		var orderArr = [];
+  		while(orderArr.length < 46){
+  			var num = Math.floor(Math.random()*46);
+  			if(orderArr.indexOf(num) == -1){
+  				orderArr.push(num);
+  			}
+  		}
+  		//alert(orderArr.length + " \n "+orderArr);
+  		for(var i = 1; i<=46; i++){
+  			$("#img"+i).html(nameArr[orderArr[i-1]]);
+  		}
+  	}
+  	</script>
+</body>
 </html>
